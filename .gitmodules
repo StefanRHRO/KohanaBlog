@@ -1,3 +1,0 @@
-[submodule "modules/mangodb"]
-	path = modules/mangodb
-	url = git://github.com/Wouterrr/MangoDB.git
