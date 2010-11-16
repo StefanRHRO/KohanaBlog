@@ -1,0 +1,9 @@
+[submodule "modules/mangodb"]
+	path = modules/mangodb
+	url = git://github.com/Wouterrr/MangoDB.git
+[submodule "modules/mangodemo"]
+	path = modules/mangodemo
+	url = git://github.com/Wouterrr/MangoDemo.git
+[submodule "modules/email"]
+	path = modules/email
+	url = git://github.com/banks/kohana-email.git
