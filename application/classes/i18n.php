@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  *
@@ -38,14 +38,14 @@
  * @license   http://www.opensource.org/licenses/bsd-license.php New BSD License
  */
 
-defined('SYSPATH') or die('No direct script access.');
+defined ( 'SYSPATH' ) or die ( 'No direct script access.' );
 
 class I18n extends Kohana_I18n {
 	public static function formatMySQLDateToLocaleDateTime($mysqlDate) {
-		return date(Kohana::config('defaults.language.date_time_format'), strtotime($mysqlDate));
+		return date ( Kohana::config ( 'defaults.language.date_time_format' ), strtotime ( $mysqlDate ) );
 	}
 	
-public static function formatMySQLDateToLocaleDate($mysqlDate) {
-		return date(Kohana::config('defaults.language.date_format'), strtotime($mysqlDate));
+	public static function formatMySQLDateToLocaleDate($mysqlDate) {
+		return date ( Kohana::config ( 'defaults.language.date_format' ), strtotime ( $mysqlDate ) );
 	}
 }
