@@ -45,8 +45,16 @@
 <title><?=$title?></title>
         
         <?php
-								foreach ( $styles as $file => $type )
-									echo HTML::style ( $file, array ('media' => $type ) ), "\n"?>
+								foreach ( $styles as $file => $type ) {
+									if(is_array($type)) {
+										$attributes = $type;	
+									}
+									else {
+										$attributes = array('media' => $type);
+									}
+									echo HTML2::style ( $file, $attributes ), "\n";
+								}							
+		?>
       	<?php
 							foreach ( $scripts as $file )
 								echo HTML::script ( $file ), "\n"?>
