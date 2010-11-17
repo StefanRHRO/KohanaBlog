@@ -35,9 +35,59 @@
  * @license   http://www.opensource.org/licenses/bsd-license.php New BSD License
  */
 defined('SYSPATH') or die('No direct script access.');
-/**
- * @var array associative array controller => action => allowed_role
- */
-return array(
-    ''
-);
+class Kohana_Acl {
+	
+	protected static $_instance = null;
+	
+	protected $_aclTree = array();
+
+    protected $_guestRole = null;
+
+	public function __construct(array $config = array()) {
+		if(empty($config)) {
+			$config = Kohana::config('acl');
+		}
+        $this->_init($config);
+	}
+	
+	public static function instance($config = array()) {
+		if(null === self::$_instance && !(self::$_instance instanceof Kohana_Acl)) {
+			self::$_instance = new self($config);
+		}
+		return self::$_instance;
+	}
+	
+	public function getAclTree() {
+		return $this->_aclTree;
+	}
+	
+	public function isAllowed($resource, $rule) {
+        $aclTree = $this->getAclTree();
+        $auth = Auth::instance();
+        if(array_key_exists($resource, $aclTree)
+           && array_key_exists($rule, $aclTree[$resource])) {
+            $allowedRoles = $aclTree[$resource][$rule];
+            if(!$auth->logged_in()) {
+                return in_array($this->_guestRole, $allowedRoles);
+            }
+            else {
+                return $auth->logged_in($allowedRoles);
+            }
+        }
+        return false;
+	}
+	
+	protected function _init($config) {
+		switch($config['adapter']) {
+			case 'orm':
+			default:
+				$model = ORM::factory('acl');
+				break;
+		}
+		$this->_aclTree = $model->asAclArray();
+        $this->_guestRole = $config['guestRole'];
+	}
+	
+}
+
+?>

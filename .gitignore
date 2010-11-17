@@ -1,0 +1,12 @@
+Icon?
+.DS_Store
+.svn
+*~
+*.swp
+coverage
+kohana_release
+build
+.buildpath
+.project
+.settings
+.idea

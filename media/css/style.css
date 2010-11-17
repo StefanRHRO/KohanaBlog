@@ -1,0 +1,217 @@
+/*
+Theme Name: OneRoom
+Theme URI: http://web-kreation.com/demos/oneroom/
+Description: A 3 columns layout Designed by Web-Kreation
+Author: Jeremie Tisseau
+Author URI: http://web-kreation.com/
+Version: 1.0
+Tags: Green, fixed width, three columns, widget-ready
+
+    OneRoom v1.0
+    Preview: http://web-kreation.com/demos/oneroom/
+
+    Date: Feb 4, 2009
+
+    This theme was designed and built by Jeremie Tisseau, whose blog you will find at
+    http://web-kreation.com/index.php/blog/
+
+    License: Read about it at http://web-kreation.com/demos/oneroom/index.php/license/
+*/
+
+/*Begin Typography &Colors  */
+html,body{border:0;margin:0;padding:0}
+html{background:#3E4035 url('images/bg.jpg')}
+body{background:url('images/header_bg.jpg') repeat-x 0 0;color:#333;font-family:"Helvetica Neue",Arial,Helvetica,sans-serif;font-size:80%;text-align:center}
+
+/* Links */
+a{color:#3D7283;text-decoration:none}
+a:hover{color:#000;text-decoration:underline}
+
+/* Common Formatting */
+h1,h2,h3,h4,h5,h6{font-weight:400;margin:0;padding:0}
+h1{background:#F4F5F3 url(images/content-sep.jpg) repeat-x 0 0;border-bottom:#E2E4E0 1px solid;clear:both;font-size:1.8em;margin:10px -20px;padding:5px 20px}
+h1 a{color:#33352C !important}
+h2{font-size:1.8em}
+h3{font-size:1.6em}
+h4{font-size:1.4em}
+h5{font-size:1.3em}
+
+p{margin:10px 0;padding:0}
+ul{list-style:none;margin:0;padding:0}
+blockquote{border-left:1px solid #D0D0CE;color:#444;display:block;font-family:Georgia,"Times New Roman",Times,serif;font-size:1.4em;font-style:italic;margin:10px 20px;padding-left:10px}
+code,pre{color:#444;font-size:1.2em}
+pre{background-color:#F4F5F3;border:#E2E4E0 1px dotted;clear:both;display:block;margin:15px 0;padding:0.2em 0.5em}
+small{font-size:0.8em}
+big{font-size:1.2em;font-weight:700}
+sup{bottom:0.3em;position:relative;vertical-align:baseline}
+sub{bottom:-0.2em;position:relative;vertical-align:baseline}
+acronym,abbr{border-bottom:1px dashed;cursor:help;letter-spacing:1px}
+hr{border-bottom:1px solid #FFF;border-left:none;border-right:none;border-top:1px dotted #BEC1B5;clear:both;display:block;margin:5px 0}
+
+/* custom Classes */
+.note,.error{border-bottom:#EBE8D7 1px solid;border-top:#EBE8D7 1px solid;display:block;float:left;line-height:normal;margin:20px 0;padding:5px 10px;width:460px}
+.note{background-color:#F4F5F3;border-bottom:#E2E4E0 1px solid;border-top:#E2E4E0 1px solid}
+.error{background-color:#FF9D9D;border-bottom:#F30 1px solid;border-top:#F30 1px solid}
+.nobullet{background:transparent !important;list-style:none !important;margin:0;padding:0}
+
+/* Tables */
+table{border:0;margin:0 0 18px;padding:0}
+table tr td{padding:2px}
+
+/* clear */
+.clear{ clear:both; width:100%; height:0; line-height:0; font-size:0; padding:0; margin:0; border:0}
+.clearfix:after{content:"."; display:block; height:0; clear:both; visibility:hidden}
+.clearfix{display:inline-block}
+/* Hides from IE-mac \*/
+* html .clearfix{height:1%}
+.clearfix{display:block}
+/* End hide from IE-mac */            
+
+/* Global Classes */
+.alignleft{display:block;float:left}
+.alignright{display:block;float:right}
+.aligncenter{display:block;margin:0 auto;text-align:center}
+
+/* images border */
+img.alignleft,img.alignright,img.aligncenter{background:#EFEFED;border:1px solid #D0D0CE;display:block;padding:3px}
+img.alignleft{float:left;margin:0 10px 2px 0}
+img.alignright{float:right;margin:0 0 2px 10px}
+img.aligncenter{margin:5px auto}
+img.noborder{background:transparent;border:none;padding:0}
+a:hover img.alignleft,a:hover img.alignright,a:hover img.aligncenter{background:#FFF;display:block;padding:3px}
+
+/* Image Captions */
+.wp-caption{background-color:#EFEFED;border:1px solid #D0D0CE;margin-bottom:15px;margin-top:15px;padding:3px;text-align:center;max-width:470px!important}
+    /* optional rounded corners for browsers that support it
+    This code is disabled by default because it is not valid CSS but you are free to enable it if you wish.
+    .wp-caption{-moz-border-radius: 3px;-khtml-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;}  */
+.wp-caption img{border:none;margin:0;padding:0;width:100%!important;height:auto!important}
+.wp-caption-text{color:#676F51;font-size:0.85em;margin:0;padding:4px 0}
+
+/* */
+a img,img{border:none}
+h6,#intro h2{font-size:1.2em}
+.nopadding,.commentlist,#respond form{margin:0 !important;padding:0 !important}
+.nobackground,#respond .left-sidebar p{background:transparent !important}
+.grey,#intro,#intro a,#intro h2 span{color:#676F51}
+#intro a,.postmetadata a:hover,#wp-calendar tr a{text-decoration:underline}
+
+/***** Main Layout *****/
+#container{height:100%;text-align:center;width:100%}
+#wrapper{margin:0 auto;text-align:left;width:968px}
+#header{background:url(images/content_top.jpg) no-repeat 0 bottom;font-size:0.9em;height:106px;position:relative}
+#logo{background:url(images/logo_bg.jpg) no-repeat right bottom;display:block;float:left;height:62px;padding:9px 0 0 20px;width:218px}
+
+/***** LOGO *****/
+/* Text option */
+#logo h1,#logo h1 a{background:transparent;border:none;clear:both;color:white!important;font:normal 1.6em Georgia,"Times New Roman",Times,serif;line-height:34px;margin:0 auto;padding:12px 0 0;text-align:center;text-decoration:none;width:210px}
+/* logo option  */
+.logo{background:url(images/logo.jpg) no-repeat center bottom;display:block;height:35px;margin:0 auto;padding-top:12px;width:200px}
+
+/* Main Navigation */
+.menu{display:block;float:right;height:24px;list-style:none;margin:8px 0 0 30px;padding:0;text-align:center}
+.menu li{display:block;float:left;height:24px;margin:0 6px 0 0;padding:0;position:relative;text-align:center;width:auto}
+.menu li a{border:1px solid #2F3028;color:#BDC1AF;display:block;float:left;font-size:1.1em;font-weight:400;height:24px;line-height:24px;padding:0 8px;position:relative;text-decoration:none}
+.menu li a:hover{background:#252620;border:1px solid #5A5C4D;color:#FFF;text-decoration:none;}
+.menu li.current_page_item a,.menu li.current_page_item a:hover{background:#6C9339;border:1px solid #B5BBA6;color:#FFF;font-weight:700;margin:-1px}
+
+/* Admin Navigation */
+#navAdmin{border-left:1px solid #464A3B;clear:right;color:#BDC1AF;display:block;float:right;height:14px;list-style:none;margin:14px 0 0 30px;padding:0;text-align:center}
+#navAdmin li{border-right:1px solid #464A3B;display:block;float:left;height:14px;margin:0;padding:0;position:relative;text-align:center;width:auto}
+#navAdmin li a{color:#BDC1AF;display:block;float:left;font-size:0.9em;height:14px;line-height:14px;padding:0 8px;position:relative}
+#navAdmin li a:hover{color:#FFF}
+#rss{background:url(images/rss_bg.jpg) no-repeat right 0;clear:right;color:#FFF;display:block;float:right;font-size:1.4em;height:31px;line-height:32px;padding-right:20px;position:absolute;right:35px;text-align:center;text-transform:uppercase;top:60px;width:220px;z-index:999}
+
+/***** Content *****/
+#pageWrapper{background:#FFF url(images/content_bg.jpg) repeat-y 0 0}
+#content{display:block;float:left;overflow:hidden;padding-left:4px;width:680px}
+#content h1,#content h2,#content h3,#content h4,#content h5,#content h6{color:#33352C;font-family:Georgia,"Times New Roman",Times,serif}
+#intro{clear:both;display:block;float:right;font-family:Georgia,"Times New Roman",Times,serif;font-size:1.4em;font-style:italic;padding:10px 20px 0;width:480px}
+#intro h2 span{font-size:0.9em}
+
+/*  POST */
+.postWrapper{clear:both;display:block}
+.postmetadata{clear:left;display:block;float:left;font-size:0.85em;padding:5px 0 20px;width:160px}
+.postmetadata a{color:#615F58}
+.meta-date{background:url(images/date.jpg) no-repeat 0 0;clear:both;color:#FFF;display:block;height:29px;padding-top:7px;width:160px}
+.date-day{border-right:1px solid #FFF;display:block;float:left;font-size:2.2em;font-weight:700;height:20px;line-height:18px;padding-left:10px;padding-right:5px;text-align:right}
+.date-month{display:block;float:left;font-size:1.2em;font-weight:700;height:12px;line-height:10px;padding-left:8px;width:90px}
+.date-year{display:block;float:left;font-size:0.8em;height:10px;line-height:10px;padding-left:8px;width:90px}
+.meta-author,.meta-edit,.meta-comments,.meta-categories,.meta-tags{clear:both;display:block;margin-left:10px;padding:2px 0 2px 20px;width:120px}
+.meta-author{background:url(images/icon-author.jpg) no-repeat 0 0}
+.meta-edit{background:url(images/icon-edit.jpg) no-repeat 0 0}
+.meta-comments{background:url(images/icon-comment.jpg) no-repeat 0 0}
+.meta-categories{background:url(images/icon-category.jpg) no-repeat 0 0}
+.meta-tags{background:url(images/icon-tag.jpg) no-repeat 0 0}
+.post{clear:right;display:block;float:right;padding:5px 20px 20px;width:480px}
+.post h2{margin:25px 0 15px}
+.post h3,.post h4,.post h5,.post h6{margin:15px 0}
+.post ul li{background:url(images/ul-post-arrow.jpg) no-repeat 0 9px;margin:0;padding:5px 0 5px 10px}
+.entry{width:480px}
+a span.more{background-color:#33352C;clear:both;color:#FFF;display:block;font-size:0.8em;font-weight:700;margin:20px 0 0 !important;padding:4px 7px;width:36px}
+a:hover span.more{background-color:#6C9339;color:#FFF;text-decoration:none}
+
+/* Left sidebar */
+.left-sidebar{background:url(images/left-sidebar-sep.jpg) no-repeat 0 0;clear:left !important;display:block;float:left;font-size:0.85em;font-weight:400;margin:0;padding:15px 0 0 10px;width:150px}
+.left-sidebar p{background:url(images/comment-arrow.jpg) no-repeat right 5px;line-height:1.5em;margin:0;padding-right:10px}
+.left-sidebar h3{margin:0;padding:0}
+.left-sidebar .avatar{background:#EFEFED;border:1px solid #D0D0CE;display:block;float:left;margin:0 5px 0 0;padding:3px}
+
+/* bottom Navigation */
+.nav{float:right;font-family:"Times New Roman",Times,serif;font-size:1.3em;font-weight:700;overflow:hidden;padding:7px 20px;width:480px;}
+.nav-border-bottom{border-bottom:#E2E4E0 1px solid}
+.nav-padding{padding:14px 20px !important;}
+
+/* Comments */
+.reply{font-size:90%;text-align:right}
+.commentlist li{clear:both;display:block;font-weight:700;margin:0 !important;padding:0 !important;}
+.comment-content{clear:right;display:block;float:left;width:480px;font-weight:normal;margin:0;padding:15px 20px;min-height:50px}
+.comment-content,.nav{background:#F4F5F3 url(images/content-sep.jpg) repeat-x 0 0}
+#respond{background:url(images/left-sidebar-sep.jpg) no-repeat 0 bottom;clear:both;display:block;margin:0 0 20px !important;min-height:1px;padding:0 !important;overflow:hidden;}
+#respond h3{padding-bottom:20px}
+#respond form textarea{height:100px !important}
+#respond form .field{border:1px solid #7F9DB9;padding:2px 5px !important;width:130px}
+#respond .form-content{clear:right;display:block;float:left;width:480px;font-weight:normal;margin:0;padding:15px 20px;background:#F4F5F3 url(images/content-sep.jpg) repeat-x 0 0; border-bottom:#E2E4E0 1px solid;padding-top:55px}
+
+/***** RIGHT SIDEBAR *****/
+#sidebar{clear:right;display:block;float:left;overflow:hidden;padding-bottom:40px;width:280px}
+#sidebar h2{color:#33352C;font-family:Georgia,"Times New Roman",Times,serif;font-size:1.6em;margin:0 0 15px;padding:0}
+#sidebar ul li{background:url(images/sidebar_sep.jpg) no-repeat 0 0;margin:0;padding:15px 10px;width:260px}
+#sidebar ul li ul{margin:0 0 0 5px;width:245px}
+#sidebar ul li ul li{background:url(images/ul-sidebar-arrow.jpg) no-repeat 0 9px;margin:0;padding:5px 0 5px 10px;width:230px !important}
+#sidebar ul li ul li ul{margin:0 !important;padding:0 !important;width:230px !important}
+#sidebar ul li ul li ul li{margin:0 !important;padding:5px 0 5px 10px;width:190px !important}
+
+/* Search Box */
+#searchform{background:transparent url(images/search-bar.jpg) no-repeat;height:37px;width:260px}
+.search-field{background:transparent;border:none;display:block;float:left;padding:10px;width:200px}
+.search-submit{background:transparent;border:none;cursor:pointer;display:block;float:left;height:37px;width:40px}
+.search-field:focus{outline:none !important}
+
+/* Banners */
+.ads{clear:both;display:block;margin:20px 0;padding:0;width:264px}
+.ads img{background:transparent;border:none;display:block;height:125px;padding:0;width:125px}
+.ads .ad-left{float:left;margin:0 0 10px}
+.ads .ad-right{float:right;margin:0 0 10px}
+
+/* Calendar */
+#calendar_wrap{display:block;margin:0 auto;width:240px}
+#wp-calendar{background:#EFEFED;border:1px solid #D0D0CE;padding:3px;width:90%}
+#wp-calendar #prev a,#wp-calendar #next a{font-size:9pt}
+#wp-calendar a{text-decoration:none}
+#wp-calendar caption{font-size:1.2em;font-weight:700;padding:5px;text-align:center;text-transform:uppercase}
+#wp-calendar thead{margin-top:5px}
+#wp-calendar th{background:#ddd;border:1px solid #D0D0CE;font-size:0.9em;font-style:normal;text-align:center;text-transform:capitalize}
+#wp-calendar #next a{display:block;float:right}
+
+/***** FOOTER *****/
+#footer{background:#21221C url(images/footer_bg.jpg) repeat-x 0 0;clear:both;color:#A9B095;font-size:0.85em;height:61px;margin:0 auto 80px;width:960px}
+#footer ul li{display:inline}
+#footer a:hover{color:#A9B095;text-decoration:none}
+#footer .foot_l{background:url(images/footer_l.jpg) no-repeat left top;float:left;height:61px;width:8px}
+#footer .foot_r{background:url(images/footer_r.jpg) no-repeat right top;clear:right;float:right;height:61px;width:8px}
+#footer .foot_content{clear:none;display:block;float:left;padding:10px 0 0;width:800px}
+#footer .foot_content p{line-height:20px;margin:0;padding:0}
+
+/* Back to top button */
+#toTop{background:url(images/top.jpg) no-repeat 0 0;clear:none;display:block;float:right;height:25px;margin-right:40px;width:50px}
