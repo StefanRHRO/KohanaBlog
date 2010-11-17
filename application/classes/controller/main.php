@@ -111,7 +111,8 @@ class Controller_Main extends Controller_Template
      */
     public function before()
     {
-        $action = Request::instance()->action;
+        $controller = $this->request->controller;
+        $action = $this->request->action;
         if (Request::$is_ajax && !in_array($action, $this->_layoutedAjaxException)) {
             $this->auto_render = false;
         }
@@ -119,10 +120,9 @@ class Controller_Main extends Controller_Template
         parent::before();
 
         $this->_session = Session::instance();
-        if (($this->_authRequired !== FALSE
-             && Auth::instance()->logged_in($this->_authRequired) === FALSE) || (is_array($this->_secureActions)
-                                                                                 && array_key_exists($action, $this->_secureActions)
-                                                                                 && Auth::instance()->logged_in($this->_secureActions [$action]) === FALSE)) {
+
+        
+        if (!Acl::instance()->isAllowed($controller, $action)) {
             if (Auth::instance()->logged_in()) {
                 Request::instance()->redirect('noaccess');
             } else {
@@ -142,7 +142,12 @@ class Controller_Main extends Controller_Template
             $this->template->styles = array();
             $this->template->scripts = array();
 
-            $styles = array('media/css/jquery-ui.css' => 'screen');
+            $styles = array(
+            	'media/css/jquery-ui.css' => array('media' => 'screen', 'rel' => 'stylesheet', 'type' => 'text/css'), 
+            	'media/css/style.css' => array('media' => 'screen', 'rel' => 'stylesheet', 'type' => 'text/css'),
+            	'#1' => array('rel' => 'alternate', 'type' => 'application/rss+xml', 'title' => $this->template->title . ' RSS Feed'),
+            	'#2' => array('rel' => 'alternate', 'type' => 'application/atom+xml', 'title' => $this->template->title . ' Atom Feed'),
+            	'#3' => array('rel' => 'pingback'));
             $scripts = array('media/js/jquery.js', 'media/js/jquery-ui.js','media/js/jquery.blockui.js' );
             $this->template->styles = array_merge($this->template->styles, $styles);
             $this->template->scripts = array_merge($this->template->scripts, $scripts);
@@ -291,7 +296,12 @@ class Controller_Main extends Controller_Template
             }
 
             if($_POST) {
-                $_POST = Arr::xss($_POST);
+            	
+            	/**
+            	 * @todo change to use htmlpurify
+            	 */
+            	
+                $_POST = Security::xss_clean($_POST);
                 $row->values($_POST);
                 if($row->check()) {
                     $row->save();
