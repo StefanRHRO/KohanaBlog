@@ -7,3 +7,6 @@
 [submodule "modules/email"]
 	path = modules/email
 	url = git://github.com/banks/kohana-email.git
+[submodule "modules/acl"]
+	path = modules/acl
+	url = git://github.com/StefanRHRO/KohanaACL.git
