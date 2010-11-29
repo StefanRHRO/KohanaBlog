@@ -40,7 +40,7 @@
 defined('SYSPATH') or die('No direct script access.');
 
 class Controller_Welcome extends Controller_Main {
-	
+
     public function action_index() {
     	$this->template->siteTitle = I18n::get('Welcome');
         $this->template->content = View::factory($this->_templatePrefix . 'welcome/index');
